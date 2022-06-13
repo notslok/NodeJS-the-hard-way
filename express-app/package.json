@@ -1,19 +1,19 @@
 {
-  "name": "basics",
+  "name": "express-app",
   "version": "1.0.0",
-  "description": "nodejs bare bones",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "start-server": "node app.js"
+    "start": "nodemon app.js"
   },
-  "author": "shlok jha",
+  "author": "Shlok Jha",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.16"
   },
   "dependencies": {
+    "body-parser": "^1.20.0",
     "express": "^4.18.1"
   }
 }
