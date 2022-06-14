@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Complete Node.js Guide",
   "main": "app.js",
-  "nodemonConfig":{
+  "nodemonConfig": {
     "ext": "js",
     "ignore": "data/*",
     "delay": "2"
@@ -16,13 +16,13 @@
   "author": "Maximilian Schwarzmüller",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.18.3"
+    "nodemon": "^2.0.16"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
+    "ejs": "^3.1.8",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "pug": "^2.0.3"
+    "express-handlebars": "^6.0.6",
+    "pug": "^3.0.2"
   }
 }
