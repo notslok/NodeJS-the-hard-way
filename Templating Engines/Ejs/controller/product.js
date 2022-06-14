@@ -1,14 +1,19 @@
-const products = [];
+// const products = []; --> implimentaion logic shifted to models dir
+
+const Product = require('../models/product');
 
 module.exports.getProducts = (req, res, next) => {
                                 // const products = adminData.products;
-                                res.render('shop', {
-                                prods: products,
-                                pageTitle: 'Shop',
-                                path: '/',
-                                hasProducts: products.length > 0,
-                                activeShop: true,
-                                productCSS: true
+                                Product.fetchAll(products => {
+                                    // console.log(products);
+                                    res.render('shop', {
+                                        prods: products,
+                                        pageTitle: 'Shop',
+                                        path: '/',
+                                        hasProducts: products.length > 0,
+                                        activeShop: true,
+                                        productCSS: true
+                                    });//will work as fetchAll is static and belongs to the class not any single instance
                                 });
                             };
 module.exports.getProductAdd = (req, res, next) => {
@@ -23,7 +28,10 @@ module.exports.getProductAdd = (req, res, next) => {
                                             });
                             };
 module.exports.putProduct = (req, res, next) => {
-                                                products.push({ title: req.body.title });
+                                                const product = new Product(req.body.title);
+                                                product.save();
+                                                // console.log(req.body.title);
+                                                // products.push({ title: req.body.title });
                                                 res.redirect('/');
                             };
 // shifted to error.js
